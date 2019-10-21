@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: log-manage
+  rabbitmq:
+    host: local.rabbitmq.com
+    port: 5672
+    username: cloud-dev
+    password: cloud-dev
+    virtual-host: /
+  listener:
+    simple:
+      concurrency: 20
+      max-concurrency: 50
+server:
+  port: 8000
+elasticsearch:
+  clusterName: elasticsearch
+  clusterNodes: 192.168.95.12:9300  #集群请用 , 分隔
+    # 配置swagger
+swagger:
+  basePackage: com.log.logmanage.controller
+  title: 日志管理中心API
+  description: 统一日志管理中心
+  version: V1.0
